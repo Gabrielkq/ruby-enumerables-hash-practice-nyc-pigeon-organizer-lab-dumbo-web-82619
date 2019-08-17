@@ -1,4 +1,31 @@
+
 def nyc_pigeon_organizer(data)
+  
+hashd = {}
+   data.each do |key, value|
+      value.each do |newval, names|
+        names.each do |name|
+          
+        if !hashd[name]
+           hashd[name] = {}
+        end
+        
+        if !hashd[name][key]
+          hashd[name][key] = []
+        end
+       hashd[name][key] << newval.to_s
+       
+      end
+    end
+  end 
+  
+  hashd
+end
+
+
+
+
+'def nyc_pigeon_organizer(data)
   
 pigeonhash = {}
 
@@ -40,3 +67,4 @@ pigeonhash = {}
   
    pigeonhash 
 end 
+'
